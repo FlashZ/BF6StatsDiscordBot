@@ -15,6 +15,34 @@ A live Discord bot that pulls statistics from tracker.gg, built for ranking a gi
 | **!sync**      | `!sync`                                            | Copies global slash-commands to this guild, then syncs them.          | Bot owner only                     |
 | **!restart**   | `!restart`                                         | Prefix alias for `/bf6 restart`.                                      | Bot owner only                     |
 
+## Environment setup (`.env`)
+
+Create a file named **`.env`** in the project root:
+
+```dotenv
+# Discord bot token (Bot settings → *Token* → *Reset* → copy)
+DISCORD_BOT_TOKEN=YOUR_DISCORD_BOT_TOKEN_HERE
+```
+
+## Install & Run
+
+git clone https://github.com/FlashZ/BF6StatsDiscordBot.git
+cd BF6StatsBot
+python -m venv .venv
+source .venv/bin/activate        # Windows: .venv\Scripts\activate
+pip install -r requirements.txt
+# create .env (see above)
+python main.py
+
+### Invite URL
+1. Invite URL
+2. Discord Dev Portal → OAuth2 → URL Generator
+3. Scopes: bot + applications.commands
+4. Bot Permissions: Send Messages, Embed Links, Read Message History
+5. Visit the generated URL, pick a server, Authorize.
+
+Tye /bf6 leaderboard in the server to verify.
+
 ## Extras
 * **Autocomplete** – player arguments suggest tracked names; platform suggests `steam`, `xboxone`, `ps`.
 * **Caching** – responses cached for **30 s** to respect Tracker.gg rate limits.
