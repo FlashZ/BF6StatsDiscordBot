@@ -26,13 +26,14 @@ DISCORD_BOT_TOKEN=YOUR_DISCORD_BOT_TOKEN_HERE
 
 ## Install & Run
 
+```python
 git clone https://github.com/FlashZ/BF6StatsDiscordBot.git
 cd BF6StatsBot
 python -m venv .venv
 source .venv/bin/activate        # Windows: .venv\Scripts\activate
 pip install -r requirements.txt
-### create .env (see above)
 python main.py
+```
 
 ## Invite URL
 1. Invite URL
