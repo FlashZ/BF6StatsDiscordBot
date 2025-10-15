@@ -42,7 +42,7 @@ python main.py
 4. Bot Permissions: Send Messages, Embed Links, Read Message History
 5. Visit the generated URL, pick a server, Authorize.
 
-Tye /bf6 leaderboard in the server to verify.
+Type /bf6 leaderboard in the server to verify.
 
 ## Extras
 * **Autocomplete** – player arguments suggest tracked names; platform suggests `steam`, `xboxone`, `ps`.
