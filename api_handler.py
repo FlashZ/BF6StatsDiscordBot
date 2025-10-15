@@ -55,6 +55,13 @@ async def _fetch(url: str, *, params: dict | None = None, fresh=False) -> dict |
             except requests.RequestException as e:
                 log.warning("[TRN] %s (attempt %s/2)", e, attempt)
         return None
+    
+async def _normalise_search(data: dict | list) -> list[dict]:
+    if data is None:
+        return []
+    if isinstance(data, list):               # legacy bare list
+        return data
+    return data.get("matches", [])
 
 
 # ──────────────────────────────────────────────────────────────────────────
@@ -85,15 +92,12 @@ class TrnClient:
 
         return data.get("matches", [])
 
-    async def search_player(self, platform: str, query: str) -> t.Optional[dict]:
-        """
-        Tracker sometimes responds with *list* (legacy) and sometimes with the
-        usual {"matches":[…]} blob.  Normalise both forms.
-        """
+    async def search_players(self, platform: str, query: str) -> list[dict]:
         data = await _fetch(
             f"{BASE}/search",
             params=dict(platform=platform, query=query, autocomplete="true")
         )
+        return await _normalise_search(data)
 
         # legacy: bare list ▸ wrap it
         if isinstance(data, list):
