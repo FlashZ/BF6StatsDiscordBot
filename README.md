@@ -1,6 +1,6 @@
-# BF6 Statistics Discord Bot
+# Battlefield6 Statistics Discord Bot
 
-A live Discord bot that pulls statistics from tracker.gg, built for ranking a given group of players defined in players.json.
+A live Discord bot that pulls Battlefield 6 statistics from tracker.gg, built for ranking a given group of players defined in players.json.
 
 # List of Commands
 
@@ -28,7 +28,7 @@ DISCORD_BOT_TOKEN=YOUR_DISCORD_BOT_TOKEN_HERE
 
 ```python
 git clone https://github.com/FlashZ/BF6StatsDiscordBot.git
-cd BF6StatsBot
+cd BF6StatsDiscordBot
 python -m venv .venv
 source .venv/bin/activate        # Windows: .venv\Scripts\activate
 pip install -r requirements.txt
